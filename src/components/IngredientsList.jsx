@@ -1,6 +1,4 @@
-import React from 'react'
-
-export default function IngredientsList({ingredients,generateRecipe}){
+export default function IngredientsList({ingredients,generateRecipe,ref}){
     const ingredientsList = ingredients.map((ingredient) => (
     <li key={ingredient}>{ingredient}</li>
   ));
@@ -12,7 +10,7 @@ export default function IngredientsList({ingredients,generateRecipe}){
               {ingredientsList}
             </ul>
             {ingredients.length > 3 && (
-              <div className="get-recipe-container">
+              <div ref={ref} className="get-recipe-container">
                 <div>
                   <h3>Ready for a recipe?</h3>
                   <p>Generate a recipe from your list of ingredients.</p>
